@@ -5,7 +5,7 @@
 # <param name = "taxRate" > The tax rate to be applied. 50 % = 0.5 < /param >
 # <returns > Returns the price including tax. < /returns >
 def Add_Tax(nonTaxAmount,  taxRate):
-    raise NotImplementedError
+    return nonTaxAmount*(1+taxRate)
 
 # <summary >
 # Takes in the current price and returns the price after discount has been deducted.
@@ -17,7 +17,12 @@ def Add_Tax(nonTaxAmount,  taxRate):
 
 
 def Discount(currentPrice,  discount):
-    raise NotImplementedError
+    if(discount<0 or discount>1):
+        return -1
+    else:
+        return currentPrice*(1-discount)
+    
+
 
 # <summary >
 # Calculate the total price where two items are part of a "Buy One Get One Half Price" promotion.
@@ -28,8 +33,7 @@ def Discount(currentPrice,  discount):
 
 
 def Buy_One_Get_One_Half_Price(item1,  item2):
-    raise NotImplementedError
-
+    return item1+0.5*(item2)
 # <summary >
 # Calculates the sum of items within an array.
 # </summary >
@@ -38,4 +42,4 @@ def Buy_One_Get_One_Half_Price(item1,  item2):
 
 
 def Calculate_Total_Cost(amounts):
-    raise NotImplementedError
+    return sum(amounts)

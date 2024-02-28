@@ -9,10 +9,19 @@ import sys
 # <param name = "numbers" > </param >
 # <returns > </returns >
 
+## ERRORS:
+# def ReturnSmallestValueInArray(numbers):
+#     min = -sys.maxsize-1 #1) This number will already be extreamly small that there will be no number in the array that would be smaller than it, so the code will never work
+#     for i in range(len(numbers)):
+#         if min < numbers[i]: # 2) swap inequality sign - currently finding the largest number in the array 
+#             min = numbers[i]
+#     # 3) we need to return the min num that we find which is not being done (return min)
+#     return 1 # 4) code always returns one regardless of what min we find - which is why it works for 1
+
 
 def ReturnSmallestValueInArray(numbers):
-    min = -sys.maxsize-1
-    for i in range(len(numbers)):
-        if min < numbers[i]:
-            min = numbers[i]
-    return 1
+    if(len(numbers)):
+        numbers.sort()
+        return numbers[0]
+    else:
+        return 0

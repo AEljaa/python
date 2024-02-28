@@ -27,12 +27,15 @@ def StampDuty(propertyPrice):
     tax = 0
 
     if startingValueForTax > 1500000:
-        raise NotImplementedError
+       tax+=0.12*(startingValueForTax-1500000)
+       startingValueForTax=1500000
 
     if startingValueForTax > 925000:
-        raise NotImplementedError
+        tax+=0.1*(startingValueForTax-925000)
+        startingValueForTax=925000
 
     if startingValueForTax > 300000:
-        raise NotImplementedError
+        tax+=0.05*(startingValueForTax-300000)
+        startingValueForTax=3000000
 
     return round(tax, 0)

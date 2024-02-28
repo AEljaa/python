@@ -15,15 +15,27 @@ class SalesItem:
 # <param name = "sales" > The array of sales items < /param >
 # <returns > The branch with the best performing sales < /returns >
 
+import sys
 
 def CalculateBestBranch(sales):
+  branchSales={}
+  for i in range(0,len(sales)):
+    currbranch=sales[i]
+    branchSales[currbranch.branch]=sales[i].totalSales + branchSales.get(currbranch.branch,0)
+  
+  #Now get the branch with highest val
+  bestpref=["",-sys.maxsize]
+  for key,amount in branchSales.items():
+    if(bestpref[1]<amount):
+        bestpref=[key,amount]
+  return bestpref[0]
 
-    branchSales = {}
+  # branchSales = {}
 
-    # Implement your code here
-    raise NotImplementedError
+  # Implement your code here
+  # raise NotImplementedError
 
-    # order your dictionary by value
-    # get key of first item
+  # order your dictionary by value
+  # get key of first item
 
-    return "FOO"
+  # return "FOO"
