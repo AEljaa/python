@@ -24,11 +24,11 @@ def CalculateBestBranch(sales):
     branchSales[currbranch.branch]=sales[i].totalSales + branchSales.get(currbranch.branch,0)
   
   #Now get the branch with highest val
-  bestpref=["",-sys.maxsize]
+  bestperf=["",-sys.maxsize]
   for key,amount in branchSales.items():
-    if(bestpref[1]<amount):
-        bestpref=[key,amount]
-  return bestpref[0]
+    if(bestperf[1]<amount):
+        bestperf=[key,amount]
+  return bestperf[0]
 
   # branchSales = {}
 
